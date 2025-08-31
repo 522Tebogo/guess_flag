@@ -15,19 +15,19 @@ function App() {
 
   // 初始化游戏
   useEffect(() => {
+    const startNewGame = () => {
+      setScore(0);
+      setLives(5);
+      setGameOver(false);
+      setMessage('');
+      setSelectedAnswer(null);
+      setStreak(0);
+      setUsedCountries([]); // 重置已使用的国家列表
+      generateQuestion([]);
+    };
+    
     startNewGame();
   }, []);
-
-  const startNewGame = () => {
-    setScore(0);
-    setLives(5);
-    setGameOver(false);
-    setMessage('');
-    setSelectedAnswer(null);
-    setStreak(0);
-    setUsedCountries([]); // 重置已使用的国家列表
-    generateQuestion([]);
-  };
 
   // 生成新问题
   const generateQuestion = (used = usedCountries) => {
@@ -130,7 +130,16 @@ function App() {
           <div className="game-over">
             <h2>游戏结束</h2>
             <p>您的得分: {score}</p>
-            <button className="restart-button" onClick={startNewGame}>
+            <button className="restart-button" onClick={() => {
+              setScore(0);
+              setLives(5);
+              setGameOver(false);
+              setMessage('');
+              setSelectedAnswer(null);
+              setStreak(0);
+              setUsedCountries([]); // 重置已使用的国家列表
+              generateQuestion([]);
+            }}>
               重新开始
             </button>
           </div>
