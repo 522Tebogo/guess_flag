@@ -124,6 +124,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>🌎 Guess The Flag</h1>
+        <h6>BY UIBO</h6>
       </header>
       
       <main className="game-container">
