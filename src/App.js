@@ -122,7 +122,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>🌎 看国旗猜国家</h1>
+        <h1>🌎 Guess The Flag</h1>
       </header>
       
       <main className="game-container">
