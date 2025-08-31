@@ -78,6 +78,22 @@ npm run build
    - 将 `build` 目录中的所有文件上传到Cloudflare Pages
    - 可通过Cloudflare控制台或wrangler CLI工具完成
 
+### 部署故障排除
+
+如果在自动部署过程中遇到依赖安装问题（如 `npm ci` 错误），可以尝试以下解决方案：
+
+1. **确保依赖同步**：
+   - 检查 `package.json` 和 `package-lock.json` 文件是否同步
+   - 如有不一致，运行 `npm install` 命令更新 lock 文件
+
+2. **清除部署缓存**：
+   - 在 Cloudflare Pages 项目设置中选择 "Clear cache and retry deployment"
+   - 或者在 GitHub 仓库中创建一个新的提交来触发重新部署
+
+3. **检查Node.js版本**：
+   - 确保部署环境的 Node.js 版本与本地开发环境兼容
+   - 必要时可在部署设置中指定 Node.js 版本
+
 ### 部署后访问
 
 - 部署完成后，Cloudflare会提供一个默认的 `*.pages.dev` 域名
