@@ -1,0 +1,20 @@
+name = "guess-flag"
+type = "javascript"
+account_id = ""
+workers_dev = true
+route = ""
+zone_id = ""
+
+[build]
+command = "npm run build"
+watch_dir = "src"
+
+[build.upload]
+format = "service-worker"
+
+[site]
+bucket = "./build"
+entry-point = "."
+
+[dev]
+port = 3000
